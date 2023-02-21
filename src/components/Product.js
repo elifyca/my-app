@@ -2,7 +2,24 @@ import {useState } from 'react'
 
 
 
-function Product ({ product }) {
+function Product ({ product, basket, setBasket}) {
+
+    const addBasket=()=>{
+       const checkBasket= basket.find(item =>item.id === product.id)
+
+       //the product has already been added
+       if (checkBasket){
+        checkBasket.amount += 1
+        setBasket([...basket.filter(item => item.id !== product.id), checkBasket])
+       
+       }else{
+        setBasket([...basket, {
+            id: product.id,
+            amount:1
+        }])
+
+       }
+    }
     return(
         <>
        <div className="product">
@@ -13,8 +30,8 @@ function Product ({ product }) {
          <div className='actions'></div>
           <button>Sell</button>
          <span className='amount'> 0 </span>
-          <button>Buy</button>
-          
+          <button onClick={addBasket}>Buy</button>
+
          <style jsx>{`
        .product{
         padding: 10px;
