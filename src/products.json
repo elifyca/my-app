@@ -2,21 +2,18 @@
     {
         "id": 1,
         "title":"Chew",
-        "price": 0.5
-    }
-
+        "price": 0.5 
+    },
     {
         "id": 2,
         "title":"Soda",
         "price": 6
-    }
-
+    },
     {
         "id": 3,
         "title":"Shoes",
         "price": 400
-    }
-
+    },
     {
         "id": 4,
         "title":"Car",
