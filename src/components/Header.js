@@ -6,10 +6,12 @@ function Header ({money}){
     return(
         <>
         <div>
-          You have {money}$100 to spend!
+          You have {money}$ to spend!
         </div>
         </>
     )
     
 
 }
+
+export default Header;

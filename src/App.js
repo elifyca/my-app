@@ -1,11 +1,12 @@
 import './App.css';
 import { useState , useEffect } from 'react';
 import Header from './components/Header';
+import products from './products.json'
 
 
 function App() {
 
-  const [money, setMoney]= useState( initialState: 100)
+  const [money, setMoney]= useState('100')
 
 
 
@@ -13,6 +14,10 @@ function App() {
   return (
     <>
     <Header money={money}/>
+
+    {products.map(product =>(
+     <Product />
+    ))}
     </>
   );
 
