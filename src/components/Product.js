@@ -46,7 +46,7 @@ function Product ({ product, total, money, basket, setBasket}) {
          <div className='actions'></div>
           <button disabled={!basketItem}onClick={removeBasket}>Sell</button>
          <span className='amount'> {basketItem && basketItem.amount || 0} </span>
-          <button  disabled={total + product.price < money}onClick={addBasket}>Buy</button>
+          <button  disabled={total + product.price > money}onClick={addBasket}>Buy</button>
 
          <style jsx>{`
        .product{

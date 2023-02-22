@@ -2,23 +2,24 @@ import { useState } from 'react'
 
 
 
-function Header ({total, money}){
+function Header ({total, money}) {
     return(
         <>
         <div>
             {total > 0 && (
+                <div>You have {money - total }$ to left!</div>
+           )}
 
-           <>
-           You have {money - total }$ to left!
-           </>
+           {total === 0 && (
+            <div>You have {money}$ to spend!</div>
+        )}
 
-            ) || (
-                <>
-                You have {money}$ to spend!
-           </>
-              
-
+            {money - total === 0 && ( 
+                <div>You're out of money</div>
             )}
+             
+
+            
           
         </div>
         </>
